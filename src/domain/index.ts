@@ -1,0 +1,12 @@
+export * from './entities/persona.entity'
+export * from './datasources/persona.datasource'
+export * from './repositories/persona.repository'
+export * from './dtos/persona/register-persona.dto'
+export * from './dtos/persona/update-persona.dto'
+export * from './use-cases/persona/getAll.use-case'
+export * from './use-cases/persona/register.use-case'
+export * from './use-cases/persona/getPersona.use-case'
+export * from './use-cases/persona/delete.use-case'
+export * from './use-cases/persona/update.use-case'
+
+export * from './responseApi/responseApi'
