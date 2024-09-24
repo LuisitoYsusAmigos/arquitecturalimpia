@@ -12,7 +12,7 @@ export class Database {
                     user: "root",
                     password: "",
                     port: 3306,
-                    database: "clean"
+                    database: "rancho"
                 });
             }
             return Database.instance
