@@ -16,3 +16,11 @@ export * from './repositories/inmueble.repository.impl'
 //medidor
 export * from './datasources/medidor.datasource.impl'
 export * from './repositories/medidor.repository.impl'
+
+//puntosAgua
+export * from './datasources/puntosAgua.datasource.impl'
+export * from './repositories/puntosAgua.repository.impl'
+
+//catastro
+export * from './datasources/catastro.datasource.impl'
+export * from './repositories/catastro.repository.impl'

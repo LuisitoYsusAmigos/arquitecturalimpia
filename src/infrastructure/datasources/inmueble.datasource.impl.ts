@@ -5,7 +5,11 @@ import { UpdateInmuebleDto,RegisterInmuebleDto, ResponseApi, InmuebleDatasource 
 export class InmuebleDatasourceImpl implements InmuebleDatasource {
     async insertarInmueble(registerInmuebleDto: RegisterInmuebleDto): Promise<ResponseApi> {
         try {
+            console.log("informacion pertinente: ",registerInmuebleDto)
+            //registerInmuebleDto.servicio_recojo_basura=1
+            //console.log("infomracion cambiada: ", registerInmuebleDto.servicio_recojo_basura)
             Database.insertar("INSERT INTO inmueble set ?", [registerInmuebleDto])
+
             return ResponseApi.success(true, 'la inmueble se registro correctamente')
         } catch (error) {
             return ResponseApi.error('La inmueble no se pudo registrar')

@@ -18,10 +18,10 @@ export class InmuebleController {
     }
 
     registrarInmueble = (req: Request, res: Response) => {
-        console.log(req.body)
+        console.log("informacion de controlador: ", req.body)
         const [error, registerInmuebleDto] = RegisterInmuebleDto.create(req.body)
         if (error) return res.status(400).json({ error })
-
+    
         new RegisterInmueble(this.inmuebleRepository)
             .execute(registerInmuebleDto!)
             .then(data => {
@@ -29,6 +29,11 @@ export class InmuebleController {
                 res.json(data)
             })
             .catch(err => res.status(500).json({ err }))
+   
+   /*
+   res.json({
+    algo: "dios"
+   }) */
     }
 
 

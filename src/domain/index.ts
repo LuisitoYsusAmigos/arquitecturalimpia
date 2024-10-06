@@ -64,6 +64,32 @@ export * from './use-cases/medidor/getMedidor.use-case'
 export * from './use-cases/medidor/delete.use-case'
 export * from './use-cases/medidor/update.use-case'
 
+//puntosAgua
+export * from './entities/puntosAgua.entity'
+export * from './datasources/puntosAgua.datasource'
+export * from './repositories/puntosAgua.repository'
+export * from './dtos/puntosAgua/register-puntosAgua.dto'
+export * from './dtos/puntosAgua/update-puntosAgua.dto'
+export * from './use-cases/puntosAgua/getAll.use-case'
+export * from './use-cases/puntosAgua/register.use-case'
+export * from './use-cases/puntosAgua/getPuntosAgua.use-case'
+export * from './use-cases/puntosAgua/delete.use-case'
+export * from './use-cases/puntosAgua/update.use-case'
+
+//catastro
+export * from './entities/catastro'
+export * from './datasources/catastro.datasource'
+export * from './repositories/catastro.repository'
+export * from './dtos/catastro/register-catastro.dto'
+export * from './dtos/catastro/update-catastro.dto'
+export * from './use-cases/catastro/getAll.use-case'
+export * from './use-cases/catastro/register.use-case'
+export * from './use-cases/catastro/getCatastro.use-case'
+export * from './use-cases/catastro/delete.use-case'
+export * from './use-cases/catastro/update.use-case'
+export * from './use-cases/catastro/getMatrizRegistro.use-case'
+export * from './use-cases/catastro/getAllIdRegistro.use-case'
+export * from './use-cases/catastro/getResumenCatastro.use-case'
 
 
 

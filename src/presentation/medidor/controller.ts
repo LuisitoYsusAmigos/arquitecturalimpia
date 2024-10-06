@@ -22,6 +22,7 @@ export class MedidorController {
         const [error, registerMedidorDto] = RegisterMedidorDto.create(req.body)
         if (error) return res.status(400).json({ error })
 
+
         new RegisterMedidor(this.medidorRepository)
             .execute(registerMedidorDto!)
             .then(data => {

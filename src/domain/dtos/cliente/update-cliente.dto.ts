@@ -5,8 +5,8 @@ export class UpdateClienteDto{
         public nombre: string,
         public apellidos: string,
         public fecha_nacimiento: string,
-        public cel: string,
-        public id_usuario: string
+        public cel: string
+        
     ){}
 
     static create( object: {[key: string]: any}): [string?, UpdateClienteDto?]{
@@ -18,7 +18,7 @@ export class UpdateClienteDto{
             apellidos,
             fecha_nacimiento,
             cel,
-            id_usuario
+            
         } = object
         if( !ci ) return ['el ci  es obligatorio', undefined]  
         if( !nombre ) return ['El nombre del usuario es obligatorio', undefined]
@@ -27,7 +27,7 @@ export class UpdateClienteDto{
         if( apellidos.length >= 40 ) return ['Los apellidos son demasiado largos', undefined]
         if( !fecha_nacimiento ) return ['la fecha es obligatoria', undefined]  
         if( !cel ) return ['el celular es obligatorio', undefined]  
-        if( !id_usuario ) return ['el id_usuario es obligatorio', undefined]  
+        
         
         return [undefined, new UpdateClienteDto(
             id,
@@ -36,7 +36,7 @@ export class UpdateClienteDto{
             apellidos,
             fecha_nacimiento,
             cel,
-            id_usuario
+            
         )]
     }
 }

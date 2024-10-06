@@ -15,7 +15,7 @@ export class ClienteDatasourceImpl implements ClienteDatasource {
 
     async obtenerClientes(): Promise<ResponseApi> {
         const clientes = await Database.listar(
-            "SELECT * FROM ubicacion"
+            "SELECT * FROM cliente"
         )
         return ResponseApi.success(clientes, 'Listado de clientes exitoso')
     }

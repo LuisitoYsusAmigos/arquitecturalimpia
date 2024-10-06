@@ -12,7 +12,7 @@ export class RegisterMedidorDto{
 
     static create( object: {[key: string]: any}): [string?, RegisterMedidorDto?]{
 
-        const {
+        let {
             id,
             numero_medidor,
             diametro_tuberia,
@@ -29,6 +29,7 @@ export class RegisterMedidorDto{
         if( !tipo_medidor ) return ['la tipo_medidor  es obligatoria', undefined]  
         if( !localizacion_caja ) return ['la localiza_cioncaja  es obligatoria', undefined]  
         if( estado_medidor===undefined ) return ['la estado_medidor  es obligatorio', undefined] 
+        if(estado_medidor!=0){estado_medidor=1}
 
         
         return [undefined, new RegisterMedidorDto(

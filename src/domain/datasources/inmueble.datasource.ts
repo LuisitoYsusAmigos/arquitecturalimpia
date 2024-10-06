@@ -14,4 +14,5 @@ export abstract class InmuebleDatasource{
     abstract eliminarInmueble(id: string): Promise<ResponseApi>
 
     abstract validacionCatastro(id: string): Promise<ResponseApi>
+    
 }
