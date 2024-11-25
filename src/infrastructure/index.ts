@@ -1,3 +1,8 @@
+//infraestructura de autenticacion
+export * from './datasources/auth.datasource.impl'
+export * from './repositories/auth.repository.impl'
+
+//usuario
 export * from './datasources/usuario.datasource.impl'
 export * from './repositories/usuario.repository.impl'
 
@@ -24,3 +29,20 @@ export * from './repositories/puntosAgua.repository.impl'
 //catastro
 export * from './datasources/catastro.datasource.impl'
 export * from './repositories/catastro.repository.impl'
+
+//tarifa
+export * from './datasources/tarifa.datasource.impl'
+export * from './repositories/tarifa.repository.impl'
+
+//lectura
+export * from './datasources/lectura.datasource.impl'
+export * from './repositories/lectura.repository.impl'
+
+//recibo
+export * from './datasources/recibo.datasource.impl'
+export * from './repositories/recibo.repository.impl'
+
+//lectura
+export * from './datasources/lecturaRecibo.datasource.impl'
+export * from './repositories/lecturaRecibo.repository.impl'
+

@@ -30,6 +30,7 @@ export class Database {
     }
 
 
+
     static async insertar(query: string, value: [{ [key: string]: any }]): Promise<boolean> {
         try {
             const pool = this.createConection()
@@ -41,9 +42,23 @@ export class Database {
         }
     }
 
+    static async listarId(query: string, id: string) {
+        
+        const pool = this.createConection()
+        const [rows] = await pool.query<RowDataPacket[]>(query, [id]);
+        //console.log("error al llamar")
+        return rows
+    }
+
     static async editar(query: string, id: string) {
         const pool = this.createConection()
         const [result] = await pool.query<RowDataPacket[]>(query, [id])
+        return result
+    }
+
+    static async editarMuchosAMuchos(query: string, id1: string,id2: string) {
+        const pool = this.createConection()
+        const [result] = await pool.query<RowDataPacket[]>(query, [id1,id2])
         return result
     }
 

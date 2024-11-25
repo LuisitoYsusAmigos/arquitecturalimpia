@@ -22,6 +22,7 @@ export class RegisterCatastroDto{
             id_puntos_agua
         } = object
         if(!codigo_usuario) return ['la codigoUsuario  es obligatoria', undefined]  
+        
         if(!categoria_suscripcion) return ['la categriasuscripcion  es obligatoria', undefined]
         if( categoria_suscripcion.length >= 50 ) return ['EL categriasuscripcion es demasiado largo', undefined]
         if(!id_cliente) return ['la codigoUsuario  es obligatoria', undefined]  

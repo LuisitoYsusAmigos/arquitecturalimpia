@@ -20,6 +20,9 @@ export class DeleteCliente implements DeleteClienteUseCase{
 
     async execute(options: Options): Promise<ResponseApi>{
         const { id } = options
+
+        //await new GetAllClientes(this.clienteRepository).execute(id)
+
         const resultado = await this.clienteRepository.eliminarCliente(id)
         return resultado
     }

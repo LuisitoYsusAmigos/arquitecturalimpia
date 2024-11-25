@@ -27,15 +27,13 @@ export class CatastroDatasourceImpl implements CatastroDatasource {
         return ResponseApi.success(catastros, 'Listado de catastro exitoso')
     }
     async obtenerIdsRegistro(): Promise<ResponseApi> {
-        const catastros = await Database.listar("SELECT (SELECT MAX(id) FROM cliente) AS max_cliente, (SELECT MAX(id) FROM ubicacion) AS max_ubicacion, (SELECT MAX(id) FROM inmueble) AS max_inmueble, (SELECT MAX(id) FROM medidor) AS max_medidor, (SELECT MAX(id) FROM puntos_agua) AS max_puntos_agua, CASE  WHEN  (SELECT MAX(id) FROM cliente) = (SELECT MAX(id) FROM ubicacion) AND(SELECT MAX(id) FROM ubicacion) = (SELECT MAX(id) FROM inmueble) AND (SELECT MAX(id) FROM inmueble) = (SELECT MAX(id) FROM medidor) AND(SELECT MAX(id) FROM medidor) = (SELECT MAX(id) FROM puntos_agua)THEN 1 ELSE 0 END AS sonIguales; "
-        )
+        const catastros = await Database.listar("SELECT (SELECT MAX(id) FROM ubicacion) AS max_ubicacion, (SELECT MAX(id) FROM inmueble) AS max_inmueble, (SELECT MAX(id) FROM medidor) AS max_medidor, (SELECT MAX(id) FROM puntos_agua) AS max_puntos_agua,  CASE  WHEN (SELECT MAX(id) FROM ubicacion) = (SELECT MAX(id) FROM inmueble) AND (SELECT MAX(id) FROM inmueble) = (SELECT MAX(id) FROM medidor)  AND (SELECT MAX(id) FROM medidor) = (SELECT MAX(id) FROM puntos_agua) THEN 1 ELSE 0 END AS sonIguales;")
         return ResponseApi.success(catastros, 'Listado de catastro exitoso')
     }
 
     async obtenerMatrizRegistro(): Promise<ResponseApi> {
-        const catastros = await Database.listar(
-            "SELECT CASE WHEN EXISTS (SELECT 1 FROM cliente WHERE id NOT IN (SELECT id_cliente FROM catastro)) THEN 1 ELSE 0 END AS cliente, CASE WHEN EXISTS (SELECT 1 FROM ubicacion WHERE id NOT IN (SELECT id_ubicacion FROM catastro)) THEN 1 ELSE 0 END AS ubicacion, CASE WHEN EXISTS (SELECT 1 FROM inmueble WHERE id NOT IN (SELECT id_inmueble FROM catastro)) THEN 1 ELSE 0 END AS inmueble, CASE WHEN EXISTS (SELECT 1 FROM medidor WHERE id NOT IN (SELECT id_medidor FROM catastro)) THEN 1 ELSE 0 END AS medidor, CASE WHEN EXISTS (SELECT 1 FROM puntos_agua WHERE id NOT IN (SELECT id_puntos_agua FROM catastro)) THEN 1 ELSE 0 END AS puntos_agua;"
-        )
+        const catastros = await Database.listar("SELECT CASE WHEN EXISTS (SELECT 1 FROM ubicacion WHERE id NOT IN (SELECT id_ubicacion FROM catastro)) THEN 1 ELSE 0 END AS ubicacion,CASE WHEN EXISTS (SELECT 1 FROM inmueble WHERE id NOT IN (SELECT id_inmueble FROM catastro)) THEN 1 ELSE 0 END AS inmueble,CASE WHEN EXISTS (SELECT 1 FROM medidor WHERE id NOT IN (SELECT id_medidor FROM catastro)) THEN 1 ELSE 0 END AS medidor,    CASE WHEN EXISTS (SELECT 1 FROM puntos_agua WHERE id NOT IN (SELECT id_puntos_agua FROM catastro)) THEN 1 ELSE 0 END AS puntos_agua;")
+         
         return ResponseApi.success(catastros, 'Listado de id para registrar catastro exitoso')
     }
 

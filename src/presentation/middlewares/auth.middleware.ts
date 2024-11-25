@@ -18,4 +18,7 @@ export class AuthMiddleware {
             response.status(500).json({ error: 'Internal Server Error' })
         }
     }
+
+
+
 }
