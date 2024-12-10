@@ -159,7 +159,18 @@ export * from './use-cases/lecturaRecibo/delete.use-case'
 export * from './use-cases/lecturaRecibo/update.use-case'
 
 
-
+//egreso
+export * from './entities/egreso.entity'
+export * from './datasources/egreso.datasource'
+export * from './repositories/egreso.repository'
+export * from './dtos/egreso/register-egreso.dto'
+export * from './dtos/egreso/update-egreso.dto'
+export * from './use-cases/egreso/getAll.use-case'
+export * from './use-cases/egreso/register.use-case'
+export * from './use-cases/egreso/getEgreso.use-case'
+export * from './use-cases/egreso/delete.use-case'
+export * from './use-cases/egreso/update.use-case'
+export * from './use-cases/egreso/getMonth.use-case'
 
 
 export * from './responseApi/responseApi'

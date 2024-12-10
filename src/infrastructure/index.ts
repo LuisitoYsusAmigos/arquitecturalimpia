@@ -46,3 +46,7 @@ export * from './repositories/recibo.repository.impl'
 export * from './datasources/lecturaRecibo.datasource.impl'
 export * from './repositories/lecturaRecibo.repository.impl'
 
+//egreso
+export * from './datasources/egreso.datasource.impl'
+export * from './repositories/egreso.repository.impl'
+

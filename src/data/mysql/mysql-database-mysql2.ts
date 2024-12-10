@@ -56,6 +56,8 @@ export class Database {
         return result
     }
 
+    
+
     static async editarMuchosAMuchos(query: string, id1: string,id2: string) {
         const pool = this.createConection()
         const [result] = await pool.query<RowDataPacket[]>(query, [id1,id2])

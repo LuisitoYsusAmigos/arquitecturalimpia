@@ -12,6 +12,7 @@ import { TarifaRoutes } from "./tarifa/routes";
 import { LecturaRoutes } from "./lectura/routes";
 import { ReciboRoutes } from "./recibo/routes";
 import { LecturaReciboRoutes } from "./lecturaRecibo/routes"; 
+import {EgresoRoutes } from "./egreso/routes"; 
 export class AppRoutes{
     static get routes(): Router{
         const router = Router();
@@ -28,6 +29,7 @@ export class AppRoutes{
         router.use('/lectura', LecturaRoutes.routes);
         router.use('/recibo', ReciboRoutes.routes);
         router.use('/lecturaRecibo', LecturaReciboRoutes.routes);
+        router.use('/egreso', EgresoRoutes.routes);
         return router;
     }
 }
