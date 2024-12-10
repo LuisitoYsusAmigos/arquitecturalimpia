@@ -8,11 +8,13 @@ export class Database {
         try {
             if (!Database.instance) {
                 Database.instance = createPool({
-                    host: "localhost",
-                    user: "root",
-                    password: "",
-                    port: 3306,
-                    database: "rancho"
+                    
+                    //host: "localhost",user: "root",password: "",port: 3306,database: "rancho"
+                    "host": "181.188.156.195",
+                    "user": "luisUser",
+                    "password": "rancho.2024",
+                    "port": 18025,
+                    "database": "rancho"
                 });
             }
             return Database.instance
